@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.SubTopicListActivity"/>
+        <activity android:name=".activities.TopicDetailActivity"/>
     </application>
 
 </manifest>
