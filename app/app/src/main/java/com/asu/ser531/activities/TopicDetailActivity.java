@@ -24,6 +24,7 @@ public class TopicDetailActivity extends AppCompatActivity {
         Topic topic = (Topic) getIntent().getSerializableExtra("Topic");
 
         Log.d(TAG, "onCreate: "+topic);
+        textView.setText(topic.toString());
 
     }
 }

@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +55,7 @@ public class TopicListActivity extends AppCompatActivity implements ItemClickLis
 
         return topics;
     }
+
 
     @Override
     public void itemClicked(Object object) {
