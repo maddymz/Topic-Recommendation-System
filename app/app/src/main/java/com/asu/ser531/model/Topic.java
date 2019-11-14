@@ -1,8 +1,9 @@
 package com.asu.ser531.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Topic {
+public class Topic implements Serializable {
 
     private String name;
     private String description;
@@ -39,5 +40,10 @@ public class Topic {
 
     public void setResearchLinks(List<String> researchLinks) {
         this.researchLinks = researchLinks;
+    }
+
+    @Override
+    public String toString(){
+        return "Name: "+name;
     }
 }

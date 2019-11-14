@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.asu.ser531.ItemClickListener;
 import com.asu.ser531.R;
 import com.asu.ser531.model.Topic;
 
@@ -14,14 +15,16 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHolder> {
+public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHolder>{
 
     private Context context;
     private List<Topic> topicList;
+    private ItemClickListener clickListener;
 
     public TopicAdapter(Context context, List<Topic> topicList){
         this.context = context;
         this.topicList = topicList;
+        clickListener = (ItemClickListener)context;
     }
 
     @NonNull
@@ -35,8 +38,14 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
     @Override
     public void onBindViewHolder(@NonNull TopicViewHolder holder, int position) {
 
-        Topic topic = topicList.get(position);
+        final Topic topic = topicList.get(position);
         holder.name.setText(topic.getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickListener.itemClicked(topic);
+            }
+        });
 
     }
 
