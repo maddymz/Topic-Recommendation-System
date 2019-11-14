@@ -1,4 +1,4 @@
-package com.asu.ser531;
+package com.asu.ser531.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
