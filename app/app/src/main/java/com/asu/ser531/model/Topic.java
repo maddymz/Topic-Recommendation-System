@@ -9,6 +9,7 @@ public class Topic implements Serializable {
     private String description;
     private List<String> videoLinks;
     private List<String> researchLinks;
+    private List<Topic> prereqs;
 
     public String getName() {
         return name;
@@ -42,8 +43,22 @@ public class Topic implements Serializable {
         this.researchLinks = researchLinks;
     }
 
+    public List<Topic> getPrereqs() {
+        return prereqs;
+    }
+
+    public void setPrereqs(List<Topic> prereqs) {
+        this.prereqs = prereqs;
+    }
+
     @Override
     public String toString(){
-        return "Name: "+name;
+
+
+        if(prereqs!=null){
+            return "Name: "+name+" "+prereqs.toString();
+        }else {
+            return "Name: "+name;
+        }
     }
 }

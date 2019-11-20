@@ -4,7 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:id="@+id/textName"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:gravity="left"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum"
+        android:gravity="center"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/prereqText"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:text="Prerequisite"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/holo_orange_light"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/prereqRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>

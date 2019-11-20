@@ -1,6 +1,7 @@
 package com.asu.ser531.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHolder>{
 
+
+    private static final String TAG = "TopicAdapter";
     private Context context;
     private List<Topic> topicList;
     private ItemClickListener clickListener;
@@ -46,6 +49,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
                 clickListener.itemClicked(topic);
             }
         });
+
+        Log.d(TAG, "onBindViewHolder: "+ topic.toString());
 
     }
 
