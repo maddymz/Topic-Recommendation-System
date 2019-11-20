@@ -50,7 +50,7 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
 
         prereqRv = findViewById(R.id.prereqRV);
         llm = new LinearLayoutManager(this);
-        adapter = new TopicAdapter(this, topic.getPrereqs());
+        adapter = new TopicAdapter(this, topic.getPrereqs(), true);
         Log.d(TAG, "onCreate: "+topic.getPrereqs());
         prereqRv.setLayoutManager(llm);
         prereqRv.setAdapter(adapter);

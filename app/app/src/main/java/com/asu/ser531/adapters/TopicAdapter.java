@@ -23,6 +23,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
     private Context context;
     private List<Topic> topicList;
     private ItemClickListener clickListener;
+    private boolean isPrereq;
 
     public TopicAdapter(Context context, List<Topic> topicList){
         this.context = context;
@@ -30,11 +31,24 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
         clickListener = (ItemClickListener)context;
     }
 
+    public TopicAdapter(Context context, List<Topic> topicList, boolean isPrereq){
+        this(context, topicList);
+        this.isPrereq = isPrereq;
+    }
+
     @NonNull
     @Override
     public TopicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.item_topic, parent, false);
+
+        View view = null;
+
+        if(isPrereq){
+            view = LayoutInflater.from(context).inflate(R.layout.item_prereq, parent, false);
+        }else{
+            view = LayoutInflater.from(context).inflate(R.layout.item_topic, parent, false);
+        }
+
         return new TopicViewHolder(view);
     }
 

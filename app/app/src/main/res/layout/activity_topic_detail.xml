@@ -36,14 +36,15 @@
             android:layout_margin="10dp"
             android:textColor="@android:color/holo_orange_light"
             />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/prereqRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/youtube_view"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/prereqRV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
     </LinearLayout>
 </ScrollView>
