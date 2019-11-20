@@ -27,15 +27,21 @@
         />
     <TextView
         android:id="@+id/prereqText"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Prerequisite"
         android:layout_margin="10dp"
         android:textColor="@android:color/holo_orange_light"
         />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/prereqRV"
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         />
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/prereqRV"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+        />
+
 </LinearLayout>

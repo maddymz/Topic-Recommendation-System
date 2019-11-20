@@ -20,9 +20,10 @@ public class TopicDetailActivity extends AppCompatActivity implements ItemClickL
     private static final String TAG = "TopicDetailActivity";
     private TextView textView;
 
-    private RecyclerView prereqRv;
-    private TopicAdapter adapter;
-    private LinearLayoutManager llm;
+//    private RecyclerView prereqRv;
+//    private TopicAdapter adapter;
+//    private LinearLayoutManager llm;
+
 
     private Topic topic;
 
@@ -33,12 +34,12 @@ public class TopicDetailActivity extends AppCompatActivity implements ItemClickL
 //        getDummyTopic();
         getTopicFromIntent();
         textView = findViewById(R.id.prereqText);
-        prereqRv = findViewById(R.id.prereqRV);
-        llm = new LinearLayoutManager(this);
-        adapter = new TopicAdapter(this, topic.getPrereqs());
-        Log.d(TAG, "onCreate: "+topic.getPrereqs());
-        prereqRv.setLayoutManager(llm);
-        prereqRv.setAdapter(adapter);
+////        prereqRv = findViewById(R.id.prereqRV);
+//        llm = new LinearLayoutManager(this);
+//        adapter = new TopicAdapter(this, topic.getPrereqs());
+//        Log.d(TAG, "onCreate: "+topic.getPrereqs());
+//        prereqRv.setLayoutManager(llm);
+//        prereqRv.setAdapter(adapter);
     }
 
     private void getTopicFromIntent(){
