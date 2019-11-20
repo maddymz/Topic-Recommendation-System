@@ -73,7 +73,7 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
         if (!wasRestored) {
-            player.cueVideo("fhWaJi1Hsfo"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
+            player.cueVideo("XQoLVl31ZfQ"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
         }
     }
 
