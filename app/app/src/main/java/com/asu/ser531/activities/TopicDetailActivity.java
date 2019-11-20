@@ -30,9 +30,9 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
     private YouTubePlayerView youTubeView;
 
 
-//    private RecyclerView prereqRv;
-//    private TopicAdapter adapter;
-//    private LinearLayoutManager llm;
+    private RecyclerView prereqRv;
+    private TopicAdapter adapter;
+    private LinearLayoutManager llm;
 
 
     private Topic topic;
@@ -41,19 +41,19 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic_detail);
-//        getDummyTopic();
+        getDummyTopic();
         getTopicFromIntent();
         textView = findViewById(R.id.prereqText);
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
 
 
-////        prereqRv = findViewById(R.id.prereqRV);
-//        llm = new LinearLayoutManager(this);
-//        adapter = new TopicAdapter(this, topic.getPrereqs());
-//        Log.d(TAG, "onCreate: "+topic.getPrereqs());
-//        prereqRv.setLayoutManager(llm);
-//        prereqRv.setAdapter(adapter);
+        prereqRv = findViewById(R.id.prereqRV);
+        llm = new LinearLayoutManager(this);
+        adapter = new TopicAdapter(this, topic.getPrereqs());
+        Log.d(TAG, "onCreate: "+topic.getPrereqs());
+        prereqRv.setLayoutManager(llm);
+        prereqRv.setAdapter(adapter);
     }
 
     private void getTopicFromIntent(){
