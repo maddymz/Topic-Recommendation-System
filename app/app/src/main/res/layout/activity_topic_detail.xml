@@ -38,7 +38,6 @@
             android:shape="ring"
             android:thicknessRatio="1.9"
             >
-
         <TextView
             android:id="@+id/desc"
             android:layout_width="match_parent"
@@ -47,7 +46,6 @@
             android:gravity="center"
             android:background="@color/colorPrimary"
             android:textColor="#ffffff"
-            android:textSize="20dp"
             android:padding="10dp"
             />
         </androidx.cardview.widget.CardView>
@@ -57,6 +55,7 @@
             android:layout_height="wrap_content"
             android:text="Prerequisite"
             style="@style/TopicLabel"
+            android:layout_marginBottom="6dp"
             />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/prereqRV"
@@ -81,6 +80,30 @@
             android:layout_height="match_parent"
             android:text="Research Link"
             style="@style/TopicLabel"
+            />
+        <TextView
+            android:id="@+id/link1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Research Link"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/holo_blue_dark"
+            />
+        <TextView
+            android:id="@+id/link2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Research Link"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/holo_blue_dark"
+            />
+        <TextView
+            android:id="@+id/link3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Research Link"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/holo_blue_dark"
             />
     </LinearLayout>
 </ScrollView>

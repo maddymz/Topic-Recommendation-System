@@ -3,7 +3,8 @@
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="6dp"
     android:elevation="20dp"
     android:clickable="true"
     android:focusable="true"
@@ -26,8 +27,9 @@
         android:layout_height="match_parent"
         android:text="Title"
         android:textColor="#ffffff"
-        android:textSize="20dp"
+        android:textSize="10dp"
         android:padding="10dp"
+        android:layout_marginBottom="10dp"
         />
 </LinearLayout>
 </androidx.cardview.widget.CardView>
