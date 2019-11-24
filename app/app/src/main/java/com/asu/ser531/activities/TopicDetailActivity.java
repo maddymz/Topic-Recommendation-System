@@ -54,9 +54,8 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
         link2.setOnClickListener(this);
         link3.setOnClickListener(this);
 
-
         getTopicFromIntent();
-        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        youTubeView = findViewById(R.id.youtube_view);
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
 
         prereqRv = findViewById(R.id.prereqRV);
