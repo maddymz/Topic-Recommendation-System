@@ -43,14 +43,123 @@ public class SubTopicListActivity extends AppCompatActivity implements ItemClick
     private List<Topic> getDummySubTopics(){
         List<Topic> topics = new ArrayList<>();
 
-        for(int i=0;i<20;i++){
-            Topic topic = new Topic();
-            topic.setName("Sub Topic: "+i);
-            topic.setPrereqs(getPrereqs());
-            topics.add(topic);
-        }
+        ArrayList<String> researchLinks = new ArrayList<>();
+        researchLinks.add("https://www.youtube.com/watch?v=f9XFM8YLccg");
 
+        ArrayList<String> researchPapers = new ArrayList<>();
+        researchPapers.add("https://www.math.ucsd.edu/~tkemp/Kemp-Research-2016.pdf");
 
+        Topic topic = new Topic();
+        topic.setName("Probability");
+        topic.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic.setPrereqs(getPrereqs());
+        topic.setVideoLinks(researchLinks);
+        topic.setResearchLinks(researchPapers);
+        topics.add(topic);
+
+        Topic topic1 = new Topic();
+        topic1.setName("Randomness, Pseudorandomness, Quasirandomness");
+        topic1.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic1.setPrereqs(getPrereqs());
+        topic1.setVideoLinks(researchLinks);
+        topic1.setResearchLinks(researchPapers);
+        topics.add(topic1);
+
+        Topic topic2 = new Topic();
+        topic2.setName("Randomization, hardware random number generator");
+        topic2.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic2.setPrereqs(getPrereqs());
+        topic2.setVideoLinks(researchLinks);
+        topic2.setResearchLinks(researchPapers);
+        topics.add(topic2);
+
+        Topic topic3 = new Topic();
+        topic3.setName("Random sequence");
+        topic3.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic3.setPrereqs(getPrereqs());
+        topic3.setVideoLinks(researchLinks);
+        topic3.setResearchLinks(researchPapers);
+        topics.add(topic3);
+
+        Topic topic4 = new Topic();
+        topic4.setName("Uncertainty");
+        topic4.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic4.setPrereqs(getPrereqs());
+        topic4.setVideoLinks(researchLinks);
+        topic4.setResearchLinks(researchPapers);
+        topics.add(topic4);
+
+        Topic topic5 = new Topic();
+        topic5.setName("Statistical dispersion");
+        topic5.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic5.setPrereqs(getPrereqs());
+        topic5.setVideoLinks(researchLinks);
+        topic5.setResearchLinks(researchPapers);
+        topics.add(topic5);
+
+        Topic topic6 = new Topic();
+        topic6.setName("Observational error");
+        topic6.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic6.setPrereqs(getPrereqs());
+        topic6.setVideoLinks(researchLinks);
+        topic6.setResearchLinks(researchPapers);
+        topics.add(topic6);
+
+        Topic topic7 = new Topic();
+        topic7.setName("Equiprobable");
+        topic7.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic7.setPrereqs(getPrereqs());
+        topic7.setVideoLinks(researchLinks);
+        topic7.setResearchLinks(researchPapers);
+        topics.add(topic7);
+
+        Topic topic8 = new Topic();
+        topic8.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic8.setPrereqs(getPrereqs());
+        topic8.setVideoLinks(researchLinks);
+        topic8.setResearchLinks(researchPapers);
+        topic8.setName("Average");
+        topics.add(topic8);
+
+        Topic topic9 = new Topic();
+        topic9.setName("Probability interpretations");
+        topic9.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic9.setPrereqs(getPrereqs());
+        topic9.setVideoLinks(researchLinks);
+        topic9.setResearchLinks(researchPapers);
+        topics.add(topic9);
+
+        Topic topic10 = new Topic();
+        topic10.setName("Markovian");
+        topic10.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic10.setPrereqs(getPrereqs());
+        topic10.setVideoLinks(researchLinks);
+        topic10.setResearchLinks(researchPapers);
+        topics.add(topic10);
+
+        Topic topic11 = new Topic();
+        topic11.setName("Statistical regularity");
+        topic11.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic11.setPrereqs(getPrereqs());
+        topic11.setVideoLinks(researchLinks);
+        topic11.setResearchLinks(researchPapers);
+        topics.add(topic11);
+
+        Topic topic12 = new Topic();
+        topic12.setName("Central tendency");
+        topic12.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic12.setPrereqs(getPrereqs());
+        topic12.setVideoLinks(researchLinks);
+        topic12.setResearchLinks(researchPapers);
+        topics.add(topic12);
+
+        Topic topic13 = new Topic();
+        topic13.setName("Bean machine");
+        topic13.setDescription("This topic talks about the topicProbability. This secrion will help us understand, learn and find the pre requisite of this topic");
+        topic13.setPrereqs(getPrereqs());
+        topic13.setVideoLinks(researchLinks);
+        topic13.setResearchLinks(researchPapers);
+        topics.add(topic13);
 
         return topics;
     }
@@ -59,15 +168,15 @@ public class SubTopicListActivity extends AppCompatActivity implements ItemClick
 
         List<Topic> prereqs = new ArrayList<>();
         Topic prereq1 = new Topic();
-        prereq1.setName("Prereq 1");
+        prereq1.setName("Martingale representation theorem");
         Topic prereq2 = new Topic();
-        prereq2.setName("Prereq 2");
+        prereq2.setName("Canonical correlation");
         Topic prereq3 = new Topic();
-        prereq3.setName("Prereq 3");
+        prereq3.setName("Information geometry");
         Topic prereq4 = new Topic();
-        prereq4.setName("Prereq 4");
+        prereq4.setName("Disintegration theorem");
         Topic prereq5 = new Topic();
-        prereq5.setName("Prereq 5");
+        prereq5.setName("Extractor");
 
         prereqs.add(prereq1);
         prereqs.add(prereq2);

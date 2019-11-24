@@ -18,47 +18,58 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClickListener, YouTubePlayer.OnInitializedListener {
+public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClickListener, YouTubePlayer.OnInitializedListener, View.OnClickListener {
 
     private static final String TAG = "TopicDetailActivity";
-    private TextView textView;
+    private TextView textView, name, desc;
     private static final int RECOVERY_REQUEST = 1;
     private YouTubePlayerView youTubeView;
 
-
-//    private RecyclerView prereqRv;
-//    private TopicAdapter adapter;
-//    private LinearLayoutManager llm;
-
-
+    private RecyclerView prereqRv;
+    private TopicAdapter adapter;
+    private LinearLayoutManager llm;
     private Topic topic;
+    private TextView link1,link2,link3;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic_detail);
-//        getDummyTopic();
-        getTopicFromIntent();
         textView = findViewById(R.id.prereqText);
-        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        name = findViewById(R.id.name);
+        desc = findViewById(R.id.desc);
+
+        link1 = findViewById(R.id.link1);
+        link2 = findViewById(R.id.link2);
+        link3 = findViewById(R.id.link3);
+
+        link1.setText("1) Probability Theory UCSD 2006");
+        link2.setText("2) What is probability theory");
+        link3.setText("3) Introduction to Probability By Charles M. Grinstead");
+
+        link1.setOnClickListener(this);
+        link2.setOnClickListener(this);
+        link3.setOnClickListener(this);
+
+        getTopicFromIntent();
+        youTubeView = findViewById(R.id.youtube_view);
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
 
-
-////        prereqRv = findViewById(R.id.prereqRV);
-//        llm = new LinearLayoutManager(this);
-//        adapter = new TopicAdapter(this, topic.getPrereqs());
-//        Log.d(TAG, "onCreate: "+topic.getPrereqs());
-//        prereqRv.setLayoutManager(llm);
-//        prereqRv.setAdapter(adapter);
+        prereqRv = findViewById(R.id.prereqRV);
+        llm = new LinearLayoutManager(this);
+        adapter = new TopicAdapter(this, topic.getPrereqs(), true);
+        Log.d(TAG, "onCreate: "+topic.getPrereqs());
+        prereqRv.setLayoutManager(llm);
+        prereqRv.setAdapter(adapter);
     }
 
     private void getTopicFromIntent(){
          topic = (Topic) getIntent().getSerializableExtra("Topic");
-        Log.d(TAG, "getTopicFromIntent: "+topic.toString());
+         name.setText(topic.getName());
+         desc.setText(topic.getDescription());
     }
 
     private void getDummyTopic(){
@@ -73,7 +84,7 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
         if (!wasRestored) {
-            player.cueVideo("fhWaJi1Hsfo"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
+            player.cueVideo("f9XFM8YLccg"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
         }
     }
 
@@ -97,5 +108,36 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
 
     protected YouTubePlayer.Provider getYouTubePlayerProvider() {
         return youTubeView;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+
+            case R.id.link1:
+                opeLink(1);
+                break;
+
+            case R.id.link2:
+                opeLink(2);
+                break;
+
+            case R.id.link3:
+                opeLink(3);
+                break;
+
+            default:
+        }
+    }
+
+
+    public void opeLink(int i){
+        if(i==1){
+            AppUtility.openInBrowser(this, "https://www.math.ucsd.edu/~tkemp/Kemp-Research-2016.pdf");
+        }else if(i==2){
+            AppUtility.openInBrowser(this, "https://www.ias.ac.in/article/fulltext/reso/020/04/0292-0310");
+        }else {
+            AppUtility.openInBrowser(this, "https://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/amsbook.mac.pdf");
+        }
     }
 }
