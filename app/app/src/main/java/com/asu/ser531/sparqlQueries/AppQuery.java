@@ -1,5 +1,6 @@
 package com.asu.ser531.sparqlQueries;
 
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.asu.ser531.utilities.AppUtility;
@@ -323,7 +324,6 @@ public class AppQuery {
 
 
     }
-
 
 
 
