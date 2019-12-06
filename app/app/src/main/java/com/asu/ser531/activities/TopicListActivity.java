@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,6 +41,22 @@ public class TopicListActivity extends AppCompatActivity implements ItemClickLis
 
         topicRecyclerView.setLayoutManager(llm);
         topicRecyclerView.setAdapter(adapter);
+
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                String results = new SparqlExamples().queryRemoteSparqlEndpoint();
+
+                Log.d("ABCD", "onCreate: "+results);
+
+            }
+        }).start();
+
+
+
+
     }
 
 
