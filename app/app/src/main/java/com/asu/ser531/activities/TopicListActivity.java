@@ -49,6 +49,9 @@ public class TopicListActivity extends AppCompatActivity implements ItemClickLis
 
                 String results = new SparqlExamples().queryRemoteSparqlEndpoint();
 
+                Log.d("SIZEA", results.length()+"");
+
+
                 Log.d("ABCD", "onCreate: "+results);
 
             }
