@@ -70,4 +70,14 @@ public class AppUtility {
     }
 
 
+    public static String getStringWithPlus(String input) {
+
+        input = input.trim();
+        input = input.replace(" ","+");
+
+        return input;
+
+    }
+
+
 }

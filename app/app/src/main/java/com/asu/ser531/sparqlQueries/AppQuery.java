@@ -18,9 +18,8 @@ public class AppQuery {
 
     private static String subtopicEndPoint  ="http:/3.135.209.188:3030/newTriple1/query";
 
-
-
-    public static List<String> getAllSubtopics(int limit, int offset){
+    //SELECT ?"+subTopicName+"\n" +
+    public static List<String> getAllSubtopics(String subTopicName, int limit, int offset){
 
         String subtoicquery = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "			 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
@@ -28,8 +27,10 @@ public class AppQuery {
                 "			 PREFIX tr1: <http://127.0.0.1:3333/>\n" +
                 "			 SELECT ?subtopic\n" +
                 "			 WHERE{\n" +
-                "			   <http://127.0.0.1:3333/General+aspects> <http://www.semanticweb.org/sarvanshprasher/ontologies/2019/10/untitled-ontology-23#contains> ?subtopic\n" +
+                "			   <http://127.0.0.1:3333/"+subTopicName+"> <http://www.semanticweb.org/sarvanshprasher/ontologies/2019/10/untitled-ontology-23#contains> ?subtopic\n" +
                 "			 }";
+
+        Log.d("Final", "getAllSubtopics: "+subtoicquery);
 
         Query query = QueryFactory.create(subtoicquery, Syntax.syntaxARQ);
         query.setLimit(limit);

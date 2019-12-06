@@ -50,11 +50,14 @@ public class TopicListActivity extends AppCompatActivity implements ItemClickLis
 
 //                String results = new SparqlExamples().queryRemoteSparqlEndpoint();
 
+                String input = "Random variables";
+                input = input.trim();
+                input = input.replace(" ","+");
 
-                List<String> results = AppQuery.getAllSubtopics(20,0);
+                List<String> results = AppQuery.getAllSubtopics(input, 20,0);
 
                 for(String subtopic : results){
-                    Log.d("SUBTOPIC", "onCreate: "+subtopic);
+                    Log.d("AAJ", "onCreate: "+subtopic);
                 }
 
             }
