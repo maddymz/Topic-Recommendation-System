@@ -8,6 +8,7 @@ import com.asu.ser531.R;
 import com.asu.ser531.adapters.TopicAdapter;
 import com.asu.ser531.model.Topic;
 import com.asu.ser531.sparqlQueries.AppQuery;
+import com.asu.ser531.utilities.AppUtility;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -50,15 +51,25 @@ public class TopicListActivity extends AppCompatActivity implements ItemClickLis
 
 //                String results = new SparqlExamples().queryRemoteSparqlEndpoint();
 
-                String input = "Random variables";
-                input = input.trim();
-                input = input.replace(" ","+");
+//                AppQuery.getSubTopicDetail("");
 
-                List<String> results = AppQuery.getAllSubtopics(input, 20,0);
+//                String input = "Random variables";
+//                input = input.trim();
+//                input = input.replace(" ","+");
+//
+//                List<String> results = AppQuery.getAllSubtopics(input, 20,0);
+//
+//                for(String subtopic : results){
+//                    Log.d("AAJ", "onCreate: "+subtopic);
+//                }
+
+                List<String> results = AppQuery.getAllTopics();
 
                 for(String subtopic : results){
                     Log.d("AAJ", "onCreate: "+subtopic);
                 }
+
+
 
             }
         }).start();
