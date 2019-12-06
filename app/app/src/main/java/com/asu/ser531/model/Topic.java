@@ -54,7 +54,6 @@ public class Topic implements Serializable {
     @Override
     public String toString(){
 
-
         if(prereqs!=null){
             return "Name: "+name+" "+prereqs.toString();
         }else {

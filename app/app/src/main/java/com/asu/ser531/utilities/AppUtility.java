@@ -59,4 +59,15 @@ public class AppUtility {
     }
 
 
+    public static String getCleanSubtoipc(String input){
+
+        input = input.replace("http://127.0.0.1:3333/", "");
+        input = input.replace("%2C+", " ");
+        input = input.replace("+", " ");
+
+
+        return input;
+    }
+
+
 }
