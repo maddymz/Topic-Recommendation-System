@@ -204,6 +204,7 @@ public class SubTopicListActivity extends AppCompatActivity implements ItemClick
     public void itemClick(String name) {
 
         Intent intent = new Intent(this, TopicDetailActivity.class);
+        intent.putExtra(name, "Topic");
 //        Topic topic = (Topic)object;
 //        intent.putExtra("Topic", topic);
         startActivity(intent);
