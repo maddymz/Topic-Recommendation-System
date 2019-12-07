@@ -47,7 +47,6 @@ public class TopicListActivity extends AppCompatActivity implements ItemClickCal
         topicRecyclerView.setAdapter(adapter);
 
 
-
         new QueryAsyncTask().execute();
 
         new Thread(new Runnable() {
