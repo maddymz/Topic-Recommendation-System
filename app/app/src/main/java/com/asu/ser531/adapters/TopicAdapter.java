@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHolder>{
 
 
-    private static final String TAG = "TopicAdapter";
     private Context context;
     private List<Topic> topicList;
     private ItemClickListener clickListener;
@@ -64,7 +63,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
             }
         });
 
-        Log.d(TAG, "onBindViewHolder: "+ topic.toString());
+//        Log.d(TAG, "onBindViewHolder: "+ topic.toString());
 
     }
 

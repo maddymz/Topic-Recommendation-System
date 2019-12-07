@@ -1,13 +1,18 @@
 package com.asu.ser531.activities;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.asu.ser531.ItemClickCallBack;
 import com.asu.ser531.ItemClickListener;
 import com.asu.ser531.R;
+import com.asu.ser531.adapters.AppStringAdapter;
 import com.asu.ser531.adapters.TopicAdapter;
 import com.asu.ser531.model.Topic;
+import com.asu.ser531.sparqlQueries.AppQuery;
+import com.asu.ser531.utilities.AppUtility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,27 +21,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class SubTopicListActivity extends AppCompatActivity implements ItemClickListener {
+public class SubTopicListActivity extends AppCompatActivity implements ItemClickCallBack {
 
     private static final String TAG = "What";
     private RecyclerView subtopicRecyclerView;
-    private TopicAdapter adapter;
+    private AppStringAdapter adapter;
     private LinearLayoutManager llm;
+
+    private String topic;
 
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Topic topic = (Topic) getIntent().getSerializableExtra("Topic");
+        topic = getIntent().getStringExtra("Topic");
         Log.d(TAG, "onCreate: "+topic);
-        getSupportActionBar().setTitle(topic.getName());
+
+        getSupportActionBar().setTitle(topic);
 
         subtopicRecyclerView = findViewById(R.id.topicRV);
         llm = new LinearLayoutManager(this);
-        adapter = new TopicAdapter(this, getDummySubTopics());
+        adapter = new AppStringAdapter(this, new ArrayList<String >());
         subtopicRecyclerView.setLayoutManager(llm);
         subtopicRecyclerView.setAdapter(adapter);
+
+        new QueryAsyncTask().execute();
+
 
     }
 
@@ -190,13 +201,48 @@ public class SubTopicListActivity extends AppCompatActivity implements ItemClick
 
 
     @Override
-    public void itemClicked(Object object) {
-
+    public void itemClick(String name) {
 
         Intent intent = new Intent(this, TopicDetailActivity.class);
-        Topic topic = (Topic)object;
-        intent.putExtra("Topic", topic);
+        intent.putExtra(name, "Topic");
+//        Topic topic = (Topic)object;
+//        intent.putExtra("Topic", topic);
         startActivity(intent);
+
     }
 
+
+    class QueryAsyncTask extends AsyncTask<String,Integer,String> {
+
+        private List<String> topics;
+
+        public QueryAsyncTask(){
+            this.topics = new ArrayList<>();
+        }
+
+
+        @Override
+        protected String doInBackground(String... strings) {
+
+            topics = AppQuery.getAllSubtopics(AppUtility.getStringWithPlus(topic), 20,0);
+
+            return null;
+        }
+
+
+        @Override
+        public void onPostExecute(String result)
+        {
+            adapter = new AppStringAdapter(SubTopicListActivity.this, topics);
+            subtopicRecyclerView.setAdapter(adapter);
+
+        }
+
+        @Override
+        public void onProgressUpdate(Integer... params)
+        {
+            // show in spinner, access UI elements
+        }
+
+    }
 }

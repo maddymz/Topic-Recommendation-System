@@ -18,6 +18,9 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +36,8 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
     private LinearLayoutManager llm;
     private Topic topic;
     private TextView link1,link2,link3;
+
+    private String SUB_TOPIC_NAME;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -60,14 +65,21 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
 
         prereqRv = findViewById(R.id.prereqRV);
         llm = new LinearLayoutManager(this);
-        adapter = new TopicAdapter(this, topic.getPrereqs(), true);
-        Log.d(TAG, "onCreate: "+topic.getPrereqs());
+        adapter = new TopicAdapter(this, getDummyTopics(), true);
+
+
         prereqRv.setLayoutManager(llm);
         prereqRv.setAdapter(adapter);
     }
 
     private void getTopicFromIntent(){
          topic = (Topic) getIntent().getSerializableExtra("Topic");
+
+         SUB_TOPIC_NAME = getIntent().getStringExtra("Topic");
+
+         topic = new Topic();
+         topic.setName(SUB_TOPIC_NAME);
+         topic.setDescription("This topic takes about the topicProbability. This section will help us understand learn and find the pre requisite of this topic");
          name.setText(topic.getName());
          desc.setText(topic.getDescription());
     }
@@ -139,5 +151,25 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
         }else {
             AppUtility.openInBrowser(this, "https://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/amsbook.mac.pdf");
         }
+    }
+
+
+    private List<Topic> getDummyTopics(){
+
+        List<Topic> topics = new ArrayList<>();
+
+        Topic topic3 = new Topic();
+        topic3.setName("Condition Probability");
+        topics.add(topic3);
+        Topic topic4 = new Topic();
+        topic4.setName("Theory of Probability Distribution");
+        topics.add(topic4);
+        Topic topic5 = new Topic();
+        topic5.setName("Properties of Probability distribution");
+        topics.add(topic5);
+        Topic topic6 = new Topic();
+
+
+        return topics;
     }
 }

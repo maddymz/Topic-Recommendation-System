@@ -6,6 +6,7 @@ android {
         applicationId "com.asu.ser531"
         minSdkVersion 16
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -23,7 +24,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
@@ -31,4 +32,10 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.google.apis:google-api-services-youtube:v3-rev212-1.25.0'
+    implementation files('libs/androjena_0.5.jar')
+    implementation files('libs/arqoid_0.5.jar')
+    implementation files('libs/lucenoid_3.0.2.jar')
+    implementation files('libs/androjena_0.5_sources.jar')
+    implementation files('libs/tdboid_0.4.jar')
+    implementation files('libs/icu4j-3.4.5.jar')
 }
