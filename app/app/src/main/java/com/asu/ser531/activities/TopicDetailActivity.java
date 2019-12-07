@@ -79,7 +79,7 @@ public class TopicDetailActivity extends YouTubeBaseActivity implements ItemClic
 
          topic = new Topic();
          topic.setName(SUB_TOPIC_NAME);
-         topic.setDescription("This topic taks about the topicProbability. This section will help us understand learn and find the pre requisite of this topic");
+         topic.setDescription("This topic takes about the topicProbability. This section will help us understand learn and find the pre requisite of this topic");
          name.setText(topic.getName());
          desc.setText(topic.getDescription());
     }
