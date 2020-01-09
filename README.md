@@ -32,4 +32,4 @@ Ste4: Upload the RDF triples on the Fuski server
 * **Suryadeep** 
 
 ## Future Work 
-We are working on the paper related to the project and need to optimize and enhance the knowledge graph. Further information will be update d here 
+We are working on the paper related to the project and need to optimize and enhance the knowledge graph. Further information will be update d here.
