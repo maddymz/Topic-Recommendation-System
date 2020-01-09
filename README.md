@@ -8,6 +8,22 @@ Apache Jena
 Android
 Amazon Web Services (AWS)
 ```
+## App Build information
+```
+Step1: Clone or download the project as zip
+Step2: Open the project using android studio
+Step3: Follow android studio build instructions
+```
+## Server build information
+
+```
+Currently, all the srever instances are shut down.
+To make it work on personal server follow following steps:
+Step1: Setup an AWS account 
+Step2: Create Server instances
+Step3: Configure the Fuseki Server on the running instances 
+Ste4: Upload the RDF triples on the Fuski server
+```
 ## Team 
 
 * **Madhukar Raj** 
@@ -15,3 +31,5 @@ Amazon Web Services (AWS)
 * **Sarvansh Prasher** 
 * **Suryadeep** 
 
+## Future Work 
+We are working on the paper related to the project and need to optimize and enhance the knowledge graph. Further information will be update d here 
