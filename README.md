@@ -10,15 +10,15 @@ Amazon Web Services (AWS)
 ```
 ## App Build information
 ```
-Step1: Clone or download the project as zip
+Step1: Clone or download the project as a zip
 Step2: Open the project using android studio
 Step3: Follow android studio build instructions
 ```
 ## Server build information
 
 ```
-Currently, all the srever instances are shut down.
-To make it work on personal server follow following steps:
+Currently, all the server instances are shut down.
+To make it work on a personal server follow these steps:
 Step1: Setup an AWS account 
 Step2: Create Server instances
 Step3: Configure the Fuseki Server on the running instances 
@@ -32,4 +32,4 @@ Ste4: Upload the RDF triples on the Fuski server
 * **Suryadeep** 
 
 ## Future Work 
-We are working on the paper related to the project and need to optimize and enhance the knowledge graph. Further information will be updated here.
+We are working on the paper, related to the project, and need to optimize and enhance the knowledge graph. Further information will be updated here.
